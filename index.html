@@ -25,6 +25,12 @@
   --tie-burgundy-deep:#4E1B1B;
   --gold-trim:#C9A227;
   --gold-trim-light:#E7C665;
+  --tie-pink:#E85C8A;
+  --tie-pink-deep:#B5386A;
+  --tie-pink-light:#F7A8C4;
+  --pai-blue:#2E5C8A;
+  --pai-blue-deep:#173C60;
+  --pai-blue-light:#5B8FC2;
 }
 
 *{
@@ -42,7 +48,7 @@ body{
   min-height:100vh;
   background:
     radial-gradient(circle at 15% 10%, rgba(224,168,104,.10), transparent 45%),
-    radial-gradient(circle at 85% 90%, rgba(31,51,80,.35), transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(46,92,138,.38), transparent 50%),
     linear-gradient(135deg,var(--chocolate),var(--dark));
   display:flex;
   justify-content:center;
@@ -55,18 +61,23 @@ body{
 
 .float-item{
   position:fixed;
-  opacity:.14;
+  opacity:.16;
   animation:flutuar 7s ease-in-out infinite;
   pointer-events:none;
   z-index:0;
   filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));
+  font-size:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
 }
 .float-item svg{ width:100%; height:100%; display:block; }
 
 .f1{ top:8%; left:6%; width:46px; height:46px; }
-.f2{ top:16%; right:9%; width:40px; height:40px; animation-delay:1.1s; }
+.f2{ top:16%; right:9%; width:40px; height:40px; font-size:34px; animation-delay:1.1s; }
 .f3{ bottom:14%; left:9%; width:44px; height:44px; animation-delay:2.2s; }
-.f4{ bottom:9%; right:10%; width:42px; height:42px; animation-delay:3.1s; }
+.f4{ bottom:9%; right:10%; width:42px; height:42px; font-size:36px; animation-delay:3.1s; }
 .f5{ top:46%; left:3%; width:34px; height:34px; animation-delay:1.7s; }
 
 @keyframes flutuar{
@@ -90,7 +101,7 @@ body::after{
   position:fixed;
   width:420px;
   height:420px;
-  background:rgba(31,51,80,.10);
+  background:rgba(46,92,138,.12);
   border-radius:50%;
   bottom:-190px;
   right:-130px;
@@ -116,8 +127,8 @@ body::after{
   border-radius:40px;
   padding:38px 25px 30px;
   text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(224,168,104,.15) inset;
-  border:2px solid rgba(224,168,104,.45);
+  box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(46,92,138,.18) inset;
+  border:2px solid rgba(46,92,138,.35);
   animation:fadeUp .9s ease;
   overflow:hidden;
 }
@@ -149,7 +160,7 @@ body::after{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  background:linear-gradient(135deg,var(--tie-navy),var(--tie-navy-deep));
+  background:linear-gradient(135deg,var(--pai-blue),var(--pai-blue-deep));
   color:var(--white);
   font-size:10.5px;
   font-weight:600;
@@ -157,7 +168,7 @@ body::after{
   text-transform:uppercase;
   padding:6px 16px;
   border-radius:999px;
-  box-shadow:0 6px 14px rgba(19,36,55,.35);
+  box-shadow:0 6px 14px rgba(23,60,96,.4);
   border:1px solid rgba(201,162,39,.55);
   z-index:6;
 }
@@ -205,7 +216,8 @@ h1{
   font-family:'Great Vibes',cursive;
   font-size:48px;
   color:var(--chocolate);
-  line-height:1;
+  line-height:1.35;
+  padding:4px 0 8px;
 }
 
 .subtitle{
@@ -218,7 +230,7 @@ h1{
 }
 
 .subtitle-pais{
-  color:var(--tie-navy);
+  color:var(--pai-blue);
   font-size:12.5px;
   font-weight:600;
   margin-bottom:16px;
@@ -228,6 +240,10 @@ h1{
   gap:6px;
 }
 .subtitle-pais svg{ width:15px; height:15px; }
+
+.section-azul{
+  color:var(--pai-blue) !important;
+}
 
 .section{
   margin:26px 0 15px;
@@ -290,7 +306,7 @@ h1{
 
 .atendente:focus-visible,
 .btn:focus-visible{
-  outline:3px solid var(--tie-navy);
+  outline:3px solid var(--pai-blue);
   outline-offset:2px;
 }
 
@@ -365,17 +381,17 @@ h1{
 .btn-cnpj{
   background:
     repeating-linear-gradient(135deg, rgba(201,162,39,.18) 0 8px, transparent 8px 16px),
-    linear-gradient(135deg,var(--tie-navy),var(--tie-navy-deep));
+    linear-gradient(135deg,var(--pai-blue),var(--pai-blue-deep));
   color:white;
   font-weight:700;
   letter-spacing:.5px;
-  box-shadow:0 6px 16px rgba(19,36,55,.4);
+  box-shadow:0 6px 16px rgba(23,60,96,.4);
   border:1px solid rgba(201,162,39,.5);
 }
 .btn-cnpj:hover{
   background:
     repeating-linear-gradient(135deg, rgba(201,162,39,.26) 0 8px, transparent 8px 16px),
-    linear-gradient(135deg,#233f66,#0f1d2c);
+    linear-gradient(135deg,#2c5583,#173c60);
 }
 
 .google-icon{
@@ -410,18 +426,18 @@ footer svg{ width:12px; height:12px; opacity:.6; }
 
 <body>
 
-<div class="float-item f1"><svg viewBox="0 0 64 64"><path fill="#E0A868" d="M20 6h24l-4 12-8 8-8-8z"/><path fill="#D4A373" d="M28 26h8l6 30-10 6-10-6z"/></svg></div>
-<div class="float-item f2"><svg viewBox="0 0 64 64"><path fill="#FDF8F3" d="M6 30c6-10 20-10 26 0 6-10 20-10 26 0-2 6-8 8-14 6-4 8-14 8-24 0-6 2-12 0-14-6z"/></svg></div>
+<div class="float-item f1">🍫</div>
+<div class="float-item f2">🍬</div>
 <div class="float-item f3"><svg viewBox="0 0 64 64"><path fill="#E0A868" d="M32 8l6 4v10l6 4-6 4v10l-6 4-6-4V30l-6-4 6-4V12z"/></svg></div>
-<div class="float-item f4"><svg viewBox="0 0 64 64"><path fill="#FDF8F3" d="M6 30c6-10 20-10 26 0 6-10 20-10 26 0-2 6-8 8-14 6-4 8-14 8-24 0-6 2-12 0-14-6z"/></svg></div>
+<div class="float-item f4">🍫</div>
 <div class="float-item f5"><svg viewBox="0 0 64 64"><path fill="#D4A373" d="M20 6h24l-4 12-8 8-8-8z"/><path fill="#E0A868" d="M28 26h8l6 30-10 6-10-6z"/></svg></div>
 
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <linearGradient id="gradGravataNavy" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#345277"/>
-      <stop offset="55%" stop-color="#1F3350"/>
-      <stop offset="100%" stop-color="#0F1D2C"/>
+      <stop offset="0%" stop-color="#5B8FC2"/>
+      <stop offset="45%" stop-color="#2E5C8A"/>
+      <stop offset="100%" stop-color="#173C60"/>
     </linearGradient>
     <linearGradient id="gradGravataBorgonha" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#9C4444"/>
@@ -433,6 +449,35 @@ footer svg{ width:12px; height:12px; opacity:.6; }
       <stop offset="55%" stop-color="#C9A227"/>
       <stop offset="100%" stop-color="#8C6E14"/>
     </linearGradient>
+    <linearGradient id="gradGravataRosa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7A8C4"/>
+      <stop offset="50%" stop-color="#E85C8A"/>
+      <stop offset="100%" stop-color="#B5386A"/>
+    </linearGradient>
+
+    <linearGradient id="shineDiag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity=".35"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="listraGravataGrande" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="url(#gradGravataNavy)"/>
+      <rect width="4" height="14" fill="url(#gradGravataDourada)" opacity=".85"/>
+    </pattern>
+    <pattern id="listraGravataBorgonha" width="12" height="12" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="url(#gradGravataBorgonha)"/>
+      <rect width="3.4" height="12" fill="url(#gradGravataDourada)" opacity=".8"/>
+    </pattern>
+    <pattern id="listraGravataRosa" width="12" height="12" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="url(#gradGravataRosa)"/>
+      <rect width="3.4" height="12" fill="#ffffff" opacity=".55"/>
+    </pattern>
+
+    <filter id="gravataSombra" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
   </defs>
 </svg>
 
@@ -447,19 +492,13 @@ footer svg{ width:12px; height:12px; opacity:.6; }
   <div class="logo-container">
     <img src="https://i.ibb.co/4Z13w9G1/Chat-GPT-Image-22-07-2026-14-30-56.png" alt="Logo">
   
-    <svg class="acessorio-gravata" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="listraGravata" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-          <rect width="10" height="10" fill="url(#gradGravataNavy)"/>
-          <rect width="3" height="10" fill="url(#gradGravataDourada)" opacity=".85"/>
-        </pattern>
-      </defs>
-  
+    <svg class="acessorio-gravata" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" filter="url(#gravataSombra)">
       <path d="M14 0 L30 10 L46 0 L46 6 L30 16 L14 6 Z" fill="#fff" stroke="#e2e2e2" stroke-width="0.6"/>
      
-      <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#listraGravata)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
+      <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#listraGravataGrande)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
       
-      <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#listraGravata)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
+      <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#listraGravataGrande)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
+      <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#shineDiag)" opacity=".5"/>
       
       <path d="M29 24 L31 24 L30 88 Z" fill="#ffffff" opacity=".18"/>
     </svg>
@@ -471,17 +510,18 @@ footer svg{ width:12px; height:12px; opacity:.6; }
   <p class="subtitle-pais">
   </p>
 
-  <div class="section">FALE COM NOSSOS ESPECIALISTAS</div>
+  <div class="section section-azul">FALE COM NOSSOS ESPECIALISTAS</div>
 
   <div class="atendentes">
 
     <div class="atendente" tabindex="0" role="button" onclick="enviarZap('558398884504','Ana')" onkeypress="if(event.key==='Enter')enviarZap('558398884504','Ana')">
       <div class="avatar-wrap">
         <img src="https://i.ibb.co/SDcQfPBC/IMG-20260304-WA0113.jpg">
-        <svg class="gravata-mini" viewBox="0 0 60 100">
+        <svg class="gravata-mini" viewBox="0 0 60 100" filter="url(#gravataSombra)">
           <path d="M14 0 L30 10 L46 0 L46 6 L30 16 L14 6 Z" fill="#fff" stroke="#e2e2e2" stroke-width="0.6"/>
-          <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#gradGravataBorgonha)" stroke="#4E1B1B" stroke-width="0.8" stroke-linejoin="round"/>
-          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#gradGravataBorgonha)" stroke="#4E1B1B" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#listraGravataBorgonha)" stroke="#4E1B1B" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#listraGravataBorgonha)" stroke="#4E1B1B" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#shineDiag)" opacity=".45"/>
           <path d="M29 24 L31 24 L30 88 Z" fill="#ffffff" opacity=".2"/>
         </svg>
       </div>
@@ -491,10 +531,11 @@ footer svg{ width:12px; height:12px; opacity:.6; }
     <div class="atendente" tabindex="0" role="button" onclick="enviarZap('558391394485',';-)')" onkeypress="if(event.key==='Enter')enviarZap('558391394485',';-)')">
       <div class="avatar-wrap">
         <img src="https://i.ibb.co/hxghcJmq/Remover-pessoa-de-foto-3.png">
-        <svg class="gravata-mini" viewBox="0 0 60 100">
+        <svg class="gravata-mini" viewBox="0 0 60 100" filter="url(#gravataSombra)">
           <path d="M14 0 L30 10 L46 0 L46 6 L30 16 L14 6 Z" fill="#fff" stroke="#e2e2e2" stroke-width="0.6"/>
-          <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#gradGravataNavy)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
-          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#gradGravataNavy)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#listraGravataGrande)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#listraGravataGrande)" stroke="#0F1D2C" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#shineDiag)" opacity=".45"/>
           <path d="M29 24 L31 24 L30 88 Z" fill="#ffffff" opacity=".2"/>
         </svg>
       </div>
@@ -504,10 +545,11 @@ footer svg{ width:12px; height:12px; opacity:.6; }
     <div class="atendente alisson" tabindex="0" role="button" onclick="enviarZap('558393961285','Alisson')" onkeypress="if(event.key==='Enter')enviarZap('558393961285','Alisson')">
       <div class="avatar-wrap">
         <img src="https://i.ibb.co/1g4hv9R/IMG-20260304-WA0107.jpg">
-        <svg class="gravata-mini" viewBox="0 0 60 100">
+        <svg class="gravata-mini" viewBox="0 0 60 100" filter="url(#gravataSombra)">
           <path d="M14 0 L30 10 L46 0 L46 6 L30 16 L14 6 Z" fill="#fff" stroke="#e2e2e2" stroke-width="0.6"/>
-          <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#gradGravataDourada)" stroke="#8C6E14" stroke-width="0.8" stroke-linejoin="round"/>
-          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#gradGravataDourada)" stroke="#8C6E14" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M20 6 L40 6 L36 22 L24 22 Z" fill="url(#listraGravataRosa)" stroke="#B5386A" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#listraGravataRosa)" stroke="#B5386A" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M25 21 L35 21 L44 78 L30 96 L16 78 Z" fill="url(#shineDiag)" opacity=".5"/>
           <path d="M29 24 L31 24 L30 88 Z" fill="#ffffff" opacity=".25"/>
         </svg>
       </div>
@@ -540,7 +582,7 @@ footer svg{ width:12px; height:12px; opacity:.6; }
   </a>
 
   <footer>
-    <svg viewBox="0 0 24 24"><path fill="#5A3A22" d="M4 10c3-5 10-5 13 0 3-5 10-5 13 0-1 3-4 4-7 3-2 4-7 4-12 0-3 1-6 0-7-3z"/></svg>
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#5A3A22"/><rect x="6.5" y="6.5" width="4.2" height="4.2" fill="#D4A373"/><rect x="13.3" y="6.5" width="4.2" height="4.2" fill="#D4A373"/><rect x="6.5" y="13.3" width="4.2" height="4.2" fill="#D4A373"/><rect x="13.3" y="13.3" width="4.2" height="4.2" fill="#D4A373"/></svg>
     © 2026 CONFEITA MAIS • TODOS OS DIREITOS RESERVADOS
   </footer>
 
@@ -549,13 +591,13 @@ footer svg{ width:12px; height:12px; opacity:.6; }
 <script>
 function enviarZap(numero,nome){
   const msg = encodeURIComponent(
-    `Olá ${nome}! Gostaria de informações sobre os produtos da Confeita Mais 🍰`
+    `Olá ${nome}! Gostaria de informações sobre os produtos da Confeita Mais 🍫🍰`
   );
   window.open(`https://wa.me/${numero}?text=${msg}`,'_blank');
 }
 
 function explodirConfetes(x,y){
-  const cores = ['#5A3A22','#E0A868','#D4A373','#1F3350','#C9A227','#ffffff'];
+  const cores = ['#5A3A22','#E0A868','#D4A373','#2E5C8A','#C9A227','#ffffff'];
   const qtd = 18;
 
   for(let i=0;i<qtd;i++){
